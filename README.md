@@ -5,6 +5,12 @@
 ### Lines of Code
 `539`
 
+# Todo
+- [ ] Framerate
+- [ ] More window functions
+- [ ] Lines
+- [ ] Rects
+
 # License
 MIT License
 
