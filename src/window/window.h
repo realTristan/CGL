@@ -58,7 +58,7 @@ public:
         return 1;
     }
 
-    bool isOpen()
+    bool is_open()
     {
         return !glfwWindowShouldClose(this->window);
     }

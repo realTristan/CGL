@@ -12,13 +12,15 @@ class Circle
 {
 private:
     GLint sides;
-    GLint numOfVertices;
+    GLint num_of_vertices;
     GLfloat *vertices;
 
     Vec3D<GLfloat> position;
     GLfloat radius;
 
-    Color color = WHITE;
+    Color fill_color = WHITE;
+    Color outline_color = WHITE;
+    GLfloat width = 0;
 
 public:
     Circle(Vec3D<GLfloat> position, GLfloat radius, GLint sides)
@@ -26,38 +28,48 @@ public:
         this->position = position;
         this->radius = radius;
         this->sides = sides;
-        this->numOfVertices = this->sides + 2;
-        this->updateVertices();
+        this->num_of_vertices = this->sides + 2;
+        this->update_vertices();
     }
 
-    void setColor(Color color)
+    void set_fill_color(Color color)
     {
-        this->color = color;
+        this->fill_color = color;
     }
 
-    void setSides(GLint sides)
+    void set_outline_color(Color color)
+    {
+        this->outline_color = color;
+    }
+
+    void set_outline_width(GLfloat width)
+    {
+        this->width = width;
+    }
+
+    void set_sides(GLint sides)
     {
         this->sides = sides;
-        this->numOfVertices = this->sides + 2;
-        this->updateVertices();
+        this->num_of_vertices = this->sides + 2;
+        this->update_vertices();
     }
 
-    void setPosition(Vec3D<GLfloat> position)
+    void set_position(Vec3D<GLfloat> position)
     {
         this->position = position;
-        this->updateVertices();
+        this->update_vertices();
     }
 
-    void setRadius(GLfloat radius)
+    void set_radius(GLfloat radius)
     {
         this->radius = radius;
-        this->updateVertices();
+        this->update_vertices();
     }
 
-    void updateVertices()
+    void update_vertices()
     {
-        Vertices vertices = Vertices(this->numOfVertices, this->position);
-        for (int i = 1; i < this->numOfVertices; i++)
+        Vertices vertices = Vertices(this->num_of_vertices, this->position);
+        for (int i = 1; i < this->num_of_vertices; i++)
         {
             vertices.set(i, Vec3D<GLfloat>(
                                 this->position.x + (this->radius * cos(i * M_PI_2 / this->sides)),
@@ -71,8 +83,18 @@ public:
     {
         glEnableClientState(GL_VERTEX_ARRAY);
         glVertexPointer(3, GL_FLOAT, 0, this->vertices);
-        glColor3f(this->color.r, this->color.g, this->color.b);
-        glDrawArrays(GL_TRIANGLE_FAN, 0, this->numOfVertices);
+
+        // Draw the circle outline
+        if (this->width > 0)
+        {
+            glColor3f(this->outline_color.r, this->outline_color.g, this->outline_color.b);
+            glLineWidth(this->width);
+            glDrawArrays(GL_LINE_LOOP, 0, this->num_of_vertices);
+        }
+
+        // Draw the circle fill
+        glColor3f(this->fill_color.r, this->fill_color.g, this->fill_color.b);
+        glDrawArrays(GL_TRIANGLE_FAN, 0, this->num_of_vertices);
         glDisableClientState(GL_VERTEX_ARRAY);
     }
 };
