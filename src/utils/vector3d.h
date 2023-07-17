@@ -25,7 +25,7 @@ public:
         this->y = y;
         this->z = z;
     }
-    Vec3D(const Vec3D &v)
+    Vec3D(const Vec3D<T> &v)
     {
         this->x = v.x;
         this->y = v.y;
@@ -33,66 +33,66 @@ public:
     }
 
     // Operations
-    Vec3D &operator=(const Vec3D &v)
+    Vec3D<T> &operator=(const Vec3D<T> &v)
     {
         this->x = v.x;
         this->y = v.y;
         this->z = v.z;
         return *this;
     }
-    Vec3D &operator+=(const Vec3D &v)
+    Vec3D<T> &operator+=(const Vec3D<T> &v)
     {
         this->x += v.x;
         this->y += v.y;
         this->z += v.z;
         return *this;
     }
-    Vec3D &operator-=(const Vec3D &v)
+    Vec3D<T> &operator-=(const Vec3D<T> &v)
     {
         this->x -= v.x;
         this->y -= v.y;
         this->z -= v.z;
         return *this;
     }
-    Vec3D &operator*=(T f)
+    Vec3D<T> &operator*=(T f)
     {
         this->x *= f;
         this->y *= f;
         this->z *= f;
         return *this;
     }
-    Vec3D &operator/=(T f)
+    Vec3D<T> &operator/=(T f)
     {
         this->x /= f;
         this->y /= f;
         this->z /= f;
         return *this;
     }
-    Vec3D operator+(const Vec3D &v) const
+    Vec3D<T> operator+(const Vec3D<T> &v) const
     {
-        return Vec3D(*this) += v;
+        return Vec3D<T>(*this) += v;
     }
-    Vec3D operator-(const Vec3D &v) const
+    Vec3D<T> operator-(const Vec3D<T> &v) const
     {
-        return Vec3D(*this) -= v;
+        return Vec3D<T>(*this) -= v;
     }
-    Vec3D operator*(T f) const
+    Vec3D<T> operator*(T f) const
     {
-        return Vec3D(*this) *= f;
+        return Vec3D<T>(*this) *= f;
     }
-    Vec3D operator/(T f) const
+    Vec3D<T> operator/(T f) const
     {
-        return Vec3D(*this) /= f;
+        return Vec3D<T>(*this) /= f;
     }
 
     // Copy the vector
-    Vec3D copy() const
+    Vec3D<T> copy() const
     {
-        return Vec3D(*this);
+        return Vec3D<T>(*this);
     }
 
     // Set the vector
-    Vec3D set(T x, T y, T z)
+    Vec3D<T> set(T x, T y, T z)
     {
         this->x = x;
         this->y = y;
@@ -121,7 +121,7 @@ public:
     }
 
     // Multiply by another vector
-    Vec3D multiply(const Vec3D &v)
+    Vec3D<T> multiply(const Vec3D<T> &v)
     {
         this->x *= v.x;
         this->y *= v.y;
@@ -130,7 +130,7 @@ public:
     }
 
     // Divide by another vector
-    Vec3D divide(const Vec3D &v)
+    Vec3D<T> divide(const Vec3D<T> &v)
     {
         this->x /= v.x;
         this->y /= v.y;
@@ -139,7 +139,7 @@ public:
     }
 
     // Add a scalar
-    Vec3D add(T f)
+    Vec3D<T> add(T f)
     {
         this->x += f;
         this->y += f;
@@ -148,7 +148,7 @@ public:
     }
 
     // Subtract a scalar
-    Vec3D subtract(T f)
+    Vec3D<T> subtract(T f)
     {
         this->x -= f;
         this->y -= f;
