@@ -3,8 +3,8 @@
 
 #include <windows.h>
 #include <GLFW/glfw3.h>
-#include <utils/vector3d.hpp>
-#include <shapes/circle.hpp>
+#include <utils/vector3d.h>
+#include <shapes/circle.h>
 #include <math.h>
 
 #define M_PI 3.14159265358979323846 /* pi */
