@@ -28,6 +28,7 @@ int main(void)
     // Create a new circle
     Vec3D<GLfloat> position = Vec3D<GLfloat>(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, 0);
     Circle circle = Circle(position, 120, 128);
+    circle.setColor(RED);
 
     // Loop until the user closes the window
     while (window.isOpen())

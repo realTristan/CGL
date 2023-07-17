@@ -3,6 +3,7 @@
 
 #include <utils/vertices.h>
 #include <utils/vector3d.h>
+#include <utils/color.h>
 #include <GLFW/glfw3.h>
 #include <math.h>
 
@@ -19,6 +20,8 @@ private:
     Vec3D<GLfloat> position;
     GLfloat radius;
 
+    Color color = WHITE;
+
 public:
     Circle(Vec3D<GLfloat> position, GLfloat radius, GLint sides)
     {
@@ -27,6 +30,11 @@ public:
         this->sides = sides;
         this->numOfVertices = this->sides + 2;
         this->updateVertices();
+    }
+
+    void setColor(Color color)
+    {
+        this->color = color;
     }
 
     void setSides(GLint sides)
@@ -65,6 +73,7 @@ public:
     {
         glEnableClientState(GL_VERTEX_ARRAY);
         glVertexPointer(3, GL_FLOAT, 0, this->vertices);
+        glColor3f(this->color.r, this->color.g, this->color.b);
         glDrawArrays(GL_TRIANGLE_FAN, 0, this->numOfVertices);
         glDisableClientState(GL_VERTEX_ARRAY);
     }
