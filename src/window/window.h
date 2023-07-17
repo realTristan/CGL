@@ -5,6 +5,9 @@
 #include <utils/color.h>
 #include <iostream>
 
+/**
+ * @brief The Window class represents a GLFW window with OpenGL context.
+ */
 class Window
 {
 private:
@@ -22,13 +25,19 @@ public:
         this->title = title;
     }
 
-    // Close the GL Window
+    /**
+     * @brief Closes the GLFW window and terminates GLFW.
+     */
     void close()
     {
         glfwTerminate();
     }
 
-    // Initialize the GL Window
+    /**
+     * @brief Initializes GLFW and creates a new window with the specified width, height, and title.
+     *
+     * @return 1 if successful, -1 otherwise.
+     */
     int init()
     {
         if (!glfwInit())
@@ -58,22 +67,38 @@ public:
         return 1;
     }
 
+    /**
+     * @brief Checks if the window is open.
+     *
+     * @return true if the window is open, false otherwise.
+     */
     bool is_open()
     {
         return !glfwWindowShouldClose(this->window);
     }
 
+    /**
+     * @brief Clears the color buffer.
+     */
     void clear()
     {
         glClear(GL_COLOR_BUFFER_BIT);
     }
 
+    /**
+     * @brief Clears the color buffer with the specified color.
+     *
+     * @param color The color to clear the buffer with.
+     */
     void clear(Color color)
     {
         glClearColor(color.r, color.g, color.b, color.a);
         this->clear();
     }
 
+    /**
+     * @brief Swaps the front and back buffers and polls for events.
+     */
     void display()
     {
         glfwSwapBuffers(this->window);

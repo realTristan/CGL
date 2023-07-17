@@ -3,7 +3,6 @@
 
 #include <shapes/vertices.h>
 #include <utils/vector3d.h>
-#include <window/window.h>
 #include <utils/color.h>
 #include <utils/math.h>
 #include <GLFW/glfw3.h>
@@ -21,75 +20,111 @@ private:
 
     Color fill_color = WHITE;
     Color outline_color = WHITE;
-    GLfloat width = 0;
+    GLfloat outline_width = 0;
 
 public:
-    Circle(Window *window, Vec3D<GLfloat> position, GLfloat radius, GLint sides)
+    Circle(Vec3D<GLfloat> position, GLfloat radius, GLint sides)
     {
         this->position = position;
         this->radius = radius;
         this->sides = sides;
         this->num_of_vertices = this->sides + 2;
-        this->update_vertices(window);
+        this->update_vertices();
     }
 
+    /**
+     * @brief Sets the fill color of the circle.
+     *
+     * @param color The color to set the fill color to.
+     */
     void set_fill_color(Color color)
     {
         this->fill_color = color;
     }
 
+    /**
+     * @brief Sets the outline color of the circle.
+     *
+     * @param color The color to set the outline color to.
+     */
     void set_outline_color(Color color)
     {
         this->outline_color = color;
     }
 
+    /**
+     * @brief Sets the outline width of the circle.
+     *
+     * @param width The width to set the outline width to.
+     */
     void set_outline_width(GLfloat width)
     {
-        this->width = width;
+        this->outline_width = width;
     }
 
-    void set_sides(Window *window, GLint sides)
+    /**
+     * @brief Sets the number of sides of the circle.
+     *
+     * @param sides The number of sides to set the circle to.
+     */
+    void set_sides(GLint sides)
     {
         this->sides = sides;
         this->num_of_vertices = this->sides + 2;
-        this->update_vertices(window);
+        this->update_vertices();
     }
 
-    void set_position(Window *window, Vec3D<GLfloat> position)
+    /**
+     * @brief Sets the position of the circle.
+     *
+     * @param position The position to set the circle to.
+     */
+    void set_position(Vec3D<GLfloat> position)
     {
         this->position = position;
-        this->update_vertices(window);
+        this->update_vertices();
     }
 
-    void set_radius(Window *window, GLfloat radius)
+    /**
+     * @brief Sets the radius of the circle.
+     *
+     * @param radius The radius to set the circle to.
+     */
+    void set_radius(GLfloat radius)
     {
         this->radius = radius;
-        this->update_vertices(window);
+        this->update_vertices();
     }
 
-    void update_vertices(Window *window)
+    /**
+     * @brief Updates the vertices of the circle.
+     */
+    void update_vertices()
     {
         Vertices *vertices = new Vertices(this->num_of_vertices, this->position);
         for (int i = 1; i < this->num_of_vertices; i++)
         {
             vertices->set(i, Vec3D<GLfloat>(
-                                window->width - this->position.x + (this->radius * cos(i * M_PI_2 / this->sides)),
-                                window->height - this->position.y + (this->radius * sin(i * M_PI_2 / this->sides)),
-                                this->position.z));
+                                 this->position.x + (this->radius * cos(i * M_PI_2 / this->sides)),
+                                 this->position.y + (this->radius * sin(i * M_PI_2 / this->sides)),
+                                 this->position.z));
         }
         this->vertices = vertices->get();
     }
 
+    /**
+     * @brief Draws the circle.
+     */
     void draw()
     {
         glEnableClientState(GL_VERTEX_ARRAY);
         glVertexPointer(3, GL_FLOAT, 0, this->vertices);
 
         // Draw the circle outline
-        if (this->width > 0)
+        if (this->outline_width > 0)
         {
             glColor3f(this->outline_color.r, this->outline_color.g, this->outline_color.b);
-            glLineWidth(this->width);
+            glLineWidth(this->outline_width);
             glDrawArrays(GL_LINE_LOOP, 0, this->num_of_vertices);
         }
 

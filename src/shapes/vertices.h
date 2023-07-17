@@ -32,11 +32,22 @@ public:
         this->points = std::vector<Vertex>(n, v);
     }
 
+    /**
+     * @brief Sets the vertex at the specified index.
+     *
+     * @param i The index of the vertex to set.
+     * @param v The vertex to set.
+     */
     void set(int i, Vertex v)
     {
         this->points[i] = v;
     }
 
+    /**
+     * @brief Returns the vertices as a GLfloat array.
+     *
+     * @return GLfloat* The vertices as a GLfloat array.
+     */
     GLfloat *get()
     {
         GLfloat *vertices = new GLfloat[this->points.size() * 3];
