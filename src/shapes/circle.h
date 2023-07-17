@@ -3,6 +3,7 @@
 
 #include <shapes/vertices.h>
 #include <utils/vector3d.h>
+#include <window/window.h>
 #include <utils/color.h>
 #include <utils/math.h>
 #include <GLFW/glfw3.h>
@@ -23,13 +24,13 @@ private:
     GLfloat width = 0;
 
 public:
-    Circle(Vec3D<GLfloat> position, GLfloat radius, GLint sides)
+    Circle(Window *window, Vec3D<GLfloat> position, GLfloat radius, GLint sides)
     {
         this->position = position;
         this->radius = radius;
         this->sides = sides;
         this->num_of_vertices = this->sides + 2;
-        this->update_vertices();
+        this->update_vertices(window);
     }
 
     void set_fill_color(Color color)
@@ -47,36 +48,36 @@ public:
         this->width = width;
     }
 
-    void set_sides(GLint sides)
+    void set_sides(Window *window, GLint sides)
     {
         this->sides = sides;
         this->num_of_vertices = this->sides + 2;
-        this->update_vertices();
+        this->update_vertices(window);
     }
 
-    void set_position(Vec3D<GLfloat> position)
+    void set_position(Window *window, Vec3D<GLfloat> position)
     {
         this->position = position;
-        this->update_vertices();
+        this->update_vertices(window);
     }
 
-    void set_radius(GLfloat radius)
+    void set_radius(Window *window, GLfloat radius)
     {
         this->radius = radius;
-        this->update_vertices();
+        this->update_vertices(window);
     }
 
-    void update_vertices()
+    void update_vertices(Window *window)
     {
-        Vertices vertices = Vertices(this->num_of_vertices, this->position);
+        Vertices *vertices = new Vertices(this->num_of_vertices, this->position);
         for (int i = 1; i < this->num_of_vertices; i++)
         {
-            vertices.set(i, Vec3D<GLfloat>(
-                                this->position.x + (this->radius * cos(i * M_PI_2 / this->sides)),
-                                this->position.y + (this->radius * sin(i * M_PI_2 / this->sides)),
+            vertices->set(i, Vec3D<GLfloat>(
+                                window->width - this->position.x + (this->radius * cos(i * M_PI_2 / this->sides)),
+                                window->height - this->position.y + (this->radius * sin(i * M_PI_2 / this->sides)),
                                 this->position.z));
         }
-        this->vertices = vertices.get();
+        this->vertices = vertices->get();
     }
 
     void draw()
