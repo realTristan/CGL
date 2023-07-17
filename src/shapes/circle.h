@@ -1,14 +1,12 @@
-#ifndef CIRCLE_H
-#define CIRCLE_H
+#ifndef SHAPES_CIRCLE_H
+#define SHAPES_CIRCLE_H
 
-#include <utils/vertices.h>
+#include <shapes/vertices.h>
 #include <utils/vector3d.h>
 #include <utils/color.h>
+#include <utils/math.h>
 #include <GLFW/glfw3.h>
 #include <math.h>
-
-#define M_PI 3.14159265358979323846 /* pi */
-#define M_PI_2 2.0f * M_PI
 
 class Circle
 {
@@ -79,4 +77,4 @@ public:
     }
 };
 
-#endif // CIRCLE_H
+#endif // SHAPES_CIRCLE_H

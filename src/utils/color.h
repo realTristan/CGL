@@ -1,5 +1,5 @@
-#ifndef COLOR_H
-#define COLOR_H
+#ifndef UTILS_COLOR_H
+#define UTILS_COLOR_H
 
 #include <cstdlib>
 
@@ -56,4 +56,4 @@ public:
     }
 };
 
-#endif // COLOR_H
+#endif // UTILS_COLOR_H

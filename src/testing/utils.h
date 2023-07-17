@@ -1,0 +1,8 @@
+#ifndef TESTING_UTILS
+#define TESTING_UTILS
+
+#define WINDOW_WIDTH 800
+#define WINDOW_HEIGHT 600
+#define WINDOW_TITLE "CGL OpenGL Testing"
+
+#endif // TESTING_UTILS

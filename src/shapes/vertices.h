@@ -1,5 +1,5 @@
-#ifndef VERTICES_H
-#define VERTICES_H
+#ifndef SHAPES_VERTICES_H
+#define SHAPES_VERTICES_H
 
 #include <utils/vector3d.h>
 #include <GLFW/glfw3.h>
@@ -52,4 +52,4 @@ public:
     }
 };
 
-#endif // VERTICES_H
+#endif // SHAPES_VERTICES_H
