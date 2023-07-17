@@ -24,7 +24,8 @@ public:
     int b;
     int a = 255;
 
-    Color() {
+    Color()
+    {
         this->r = 0;
         this->g = 0;
         this->b = 0;

@@ -13,9 +13,9 @@ private:
 public:
     int width;
     int height;
-    char* title;
+    char *title;
 
-    Window(int width, int height, char* title)
+    Window(int width, int height, char *title)
     {
         this->width = width;
         this->height = height;
@@ -58,20 +58,24 @@ public:
         return 1;
     }
 
-    bool isOpen() {
+    bool isOpen()
+    {
         return !glfwWindowShouldClose(this->window);
     }
 
-    void clear() {
+    void clear()
+    {
         glClear(GL_COLOR_BUFFER_BIT);
     }
 
-    void clear(Color color) {
+    void clear(Color color)
+    {
         glClearColor(color.r, color.g, color.b, color.a);
         this->clear();
     }
 
-    void display() {
+    void display()
+    {
         glfwSwapBuffers(this->window);
         glfwPollEvents();
     }

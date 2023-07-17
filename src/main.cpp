@@ -31,7 +31,7 @@ int main(void)
 
     // Loop until the user closes the window
     while (window.isOpen())
-    {   
+    {
         // Clear the window
         window.clear(BLACK);
 
