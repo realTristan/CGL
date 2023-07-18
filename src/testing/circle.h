@@ -24,7 +24,7 @@ public:
 
         // Create a new circle
         Vec3D<GLfloat> position = Vec3D<GLfloat>(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, 0);
-        Circle *circle = new Circle(window, position, 120, 128);
+        Circle *circle = new Circle(position, 120, 128);
         circle->set_fill_color(BLACK);
         circle->set_outline_color(WHITE);
         circle->set_outline_width(5);
