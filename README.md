@@ -11,8 +11,9 @@
 - [X] Lines, Angled, Positioned
 - [X] Keys, Mouse Buttons, IsPressed
 - [X] Discrete Window Contexts
-- [ ] Text
 - [ ] Rects, Filled, Line
+- [ ] Images
+- [ ] Text
 
 # License
 MIT License
