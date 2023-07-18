@@ -27,6 +27,13 @@ private:
     GLfloat outline_width = 0;
 
 public:
+    /**
+     * @brief Creates a new circle.
+     *
+     * @param position The position of the circle.
+     * @param radius The radius of the circle.
+     * @param sides The number of sides of the circle.
+     */
     Circle(Vec3D<GLfloat> position, GLfloat radius, GLint sides)
     {
         this->position = position;
@@ -101,9 +108,9 @@ public:
      *
      * @return The vertices of the circle.
      */
-    GLfloat *get_vertices()
+    GLfloat get_vertices()
     {
-        return this->vertices;
+        return *this->vertices;
     }
 
     /**
