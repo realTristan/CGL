@@ -97,7 +97,7 @@ public:
     {
         // initialize a new window
         Window *window = new Window(settings);
-        if (window->init() == -1)
+        if (!window->init())
         {
             return;
         }
