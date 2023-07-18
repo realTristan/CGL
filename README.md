@@ -3,13 +3,14 @@
 ![image](https://github.com/realTristan/CGL/assets/75189508/f932e185-caa2-4ff6-bdfd-a1d29ff334d6)
 
 ### Lines of Code
-`1002`
+`1053`
 
 # Todo
 - [X] Circles, Filled, Line
 - [X] Window, Window Framerate, More Functions
 - [X] Lines, Angled, Positioned
 - [X] Keys, Mouse Buttons, IsPressed
+- [X] Window Contexts
 - [ ] Text
 - [ ] Rects, Filled, Line
 
