@@ -1,6 +1,6 @@
 # CGL ![Stars](https://img.shields.io/github/stars/realTristan/CGL?color=brightgreen) ![Watchers](https://img.shields.io/github/watchers/realTristan/CGL?label=Watchers)
 
-![image](https://github.com/realTristan/CGL/assets/75189508/23ff8c0e-9570-402e-ab7a-4b88c95a0134)
+![image](https://github.com/realTristan/CGL/assets/75189508/f932e185-caa2-4ff6-bdfd-a1d29ff334d6)
 
 ### Lines of Code
 `773`
