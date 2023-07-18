@@ -10,7 +10,7 @@
 - [X] Window, Window Framerate, More Functions
 - [X] Lines, Angled, Positioned
 - [X] Keys, Mouse Buttons, IsPressed
-- [X] Window Contexts
+- [X] Discrete Window Contexts
 - [ ] Text
 - [ ] Rects, Filled, Line
 
