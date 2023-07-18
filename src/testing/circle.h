@@ -21,6 +21,8 @@ public:
         {
             return -1;
         }
+        window->set_framerate(60);
+        window->set_position(500, 200);
 
         // Create a new circle
         Vec3D<GLfloat> position = Vec3D<GLfloat>(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, 0);

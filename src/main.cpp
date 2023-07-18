@@ -7,9 +7,9 @@
 
 int main(void) {
     // Tests
-    // TestingCircle::start();
+    TestingCircle::start();
     // TestingPositionedLine::start();
-    TestingAngledLine::start();
+    // TestingAngledLine::start();
 
     return 0;
 }

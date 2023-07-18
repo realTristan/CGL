@@ -3,6 +3,7 @@
 
 #include <GLFW/glfw3.h>
 #include <utils/color.h>
+#include <utils/vector2d.h>
 #include <iostream>
 
 /**
@@ -189,6 +190,114 @@ public:
     void set_position_y(int y)
     {
         glfwSetWindowPos(this->window, this->width, y);
+    }
+
+    /**
+     * @brief Gets the window's width.
+     * 
+     * @return The width
+    */
+    int get_width()
+    {
+        return this->width;
+    }
+
+    /**
+     * @brief Gets the window's height.
+     * 
+     * @return The height
+    */
+    int get_height()
+    {
+        return this->height;
+    }
+
+    /**
+     * @brief Gets the window's position.
+     * 
+     * @return The position
+    */
+    Vec2D<int> *get_position()
+    {
+        int *x = new int;
+        int *y = new int;
+        glfwGetWindowPos(this->window, x, y);
+        return new Vec2D<int>(*x, *y);
+    }
+
+    /**
+     * @brief Gets the window's x position.
+     * 
+     * @return The x position
+    */
+    int get_position_x()
+    {
+        int *x = new int;
+        int *y = new int;
+        glfwGetWindowPos(this->window, x, y);
+        return *x;
+    }
+
+    /**
+     * @brief Gets the window's y position.
+     * 
+     * @return The y position
+    */
+    int get_position_y()
+    {
+        int *x = new int;
+        int *y = new int;
+        glfwGetWindowPos(this->window, x, y);
+        return *y;
+    }
+
+    /**
+     * @brief Gets the window's title.
+     * 
+     * @return The title
+    */
+    char *get_title()
+    {
+        return this->title;
+    }
+
+    /**
+     * @brief Gets the position of the mouse relative to the window.
+     * 
+     * @return the position of the mouse
+    */
+    Vec2D<double> *get_mouse_position()
+    {
+        double *x = new double;
+        double *y = new double;
+        glfwGetCursorPos(this->window, x, y);
+        return new Vec2D<double>(*x, *y);
+    }
+
+    /**
+     * @brief Gets the x position of the mouse relative to the window.
+     * 
+     * @return the x position of the mouse
+    */
+    double get_mouse_position_x()
+    {
+        double *x = new double;
+        double *y = new double;
+        glfwGetCursorPos(this->window, x, y);
+        return *x;
+    }
+
+    /**
+     * @brief Gets the y position of the mouse relative to the window.
+     * 
+     * @return the y position of the mouse
+    */
+    double get_mouse_position_y()
+    {
+        double *x = new double;
+        double *y = new double;
+        glfwGetCursorPos(this->window, x, y);
+        return *y;
     }
 };
 
