@@ -3,7 +3,7 @@
 ![image](https://github.com/realTristan/CGL/assets/75189508/23ff8c0e-9570-402e-ab7a-4b88c95a0134)
 
 ### Lines of Code
-`539`
+`773`
 
 # Todo
 - [ ] Framerate
