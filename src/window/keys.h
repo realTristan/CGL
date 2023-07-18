@@ -6,16 +6,55 @@
 class Keys
 {
 public:
+    /**
+     * @brief Returns true if the specified key is pressed.
+     *
+     * @param window The GLFW window.
+     * @param key The key to check.
+     * @return true if the specified key is pressed.
+     */
     static bool pressed(GLFWwindow *window, int key)
     {
         return glfwGetKey(window, key) == GLFW_PRESS;
     }
 
+    /**
+     * @brief Returns true if the specified key is released.
+     *
+     * @param window The GLFW window.
+     * @param key The key to check.
+     * @return true if the specified key is released.
+     */
     static int get_glfw(GLFWwindow *window, int key = -1)
     {
         return glfwGetKey(window, key);
     }
 
+    /**
+     * @brief Returns true if the specified key is released.
+     *
+     * @param window The GLFW window.
+     * @param key The key to check.
+     * @return true if the specified key is released.
+     */
+    static bool released(GLFWwindow *window, int key)
+    {
+        return glfwGetKey(window, key) == GLFW_RELEASE;
+    }
+
+    /**
+     * @brief Returns true if the specified key is held down.
+     *
+     * @param window The GLFW window.
+     * @param key The key to check.
+     * @return true if the specified key is held down.
+     */
+    static bool down(GLFWwindow *window, int key)
+    {
+        return glfwGetKey(window, key) == GLFW_REPEAT;
+    }
+
+    // Key shortcuts
     static const int MOUSE_BUTTON_LEFT = 0;
     static const int MOUSE_BUTTON_RIGHT = 1;
     static const int MOUSE_BUTTON_MIDDLE = 2;
@@ -132,7 +171,6 @@ public:
     static const int KP_ADD = 334;
     static const int KP_ENTER = 335;
     static const int KP_EQUAL = 336;
-
 };
 
 #endif // WINDOW_KEYS_H

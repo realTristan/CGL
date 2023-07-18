@@ -7,6 +7,16 @@
 #include <iostream>
 
 /**
+ * @brief The WindowSettings struct represents the settings for a GLFW window.
+ */
+typedef struct WindowSettings
+{
+    int width;
+    int height;
+    char *title;
+} WindowSettings;
+
+/**
  * @brief The Window class represents a GLFW window with OpenGL context.
  */
 class Window
@@ -24,6 +34,13 @@ public:
         this->width = width;
         this->height = height;
         this->title = title;
+    }
+
+    Window(WindowSettings settings)
+    {
+        this->width = settings.width;
+        this->height = settings.height;
+        this->title = settings.title;
     }
 
     /**
@@ -69,6 +86,30 @@ public:
     }
 
     /**
+     * @brief Initializes GLFW and creates a new window with the specified settings. 
+     * The window can be accessed by the provided function.
+     *
+     * @param settings The window settings.
+     * @param func The lambda function to run after the window is initialized.
+     * @return 1 if successful, -1 otherwise.
+     */
+    static void open_context(WindowSettings settings, void (*func)(Window *window))
+    {
+        // initialize a new window
+        Window *window = new Window(settings);
+        if (window->init() == -1)
+        {
+            return;
+        }
+
+        // run the provided function
+        func(window);
+
+        // close the window
+        window->close();
+    }
+
+    /**
      * @brief Checks if the window is open.
      *
      * @return true if the window is open, false otherwise.
@@ -108,7 +149,7 @@ public:
 
     /**
      * @brief Sets the framerate
-     * 
+     *
      * @param framerate The framerate
      */
     void set_framerate(int framerate)
@@ -118,7 +159,7 @@ public:
 
     /**
      * @brief Sets the window's title.
-     * 
+     *
      * @param title The title
      */
     void set_title(char *title)
@@ -128,7 +169,7 @@ public:
 
     /**
      * @brief Sets the window's width and height.
-     * 
+     *
      * @param width The width
      * @param height The height
      */
@@ -141,7 +182,7 @@ public:
 
     /**
      * @brief Sets the window's width.
-     * 
+     *
      * @param width The width
      */
     void set_width(int width)
@@ -152,7 +193,7 @@ public:
 
     /**
      * @brief Sets the window's height.
-     * 
+     *
      * @param height The height
      */
     void set_height(int height)
@@ -163,7 +204,7 @@ public:
 
     /**
      * @brief Sets the window's position.
-     * 
+     *
      * @param x The x position
      * @param y The y position
      */
@@ -174,7 +215,7 @@ public:
 
     /**
      * @brief Sets the window's x position.
-     * 
+     *
      * @param x The x position
      */
     void set_position_x(int x)
@@ -184,7 +225,7 @@ public:
 
     /**
      * @brief Sets the window's y position.
-     * 
+     *
      * @param y The y position
      */
     void set_position_y(int y)
@@ -194,9 +235,9 @@ public:
 
     /**
      * @brief Gets the window's width.
-     * 
+     *
      * @return The width
-    */
+     */
     int get_width()
     {
         return this->width;
@@ -204,19 +245,29 @@ public:
 
     /**
      * @brief Gets the window's height.
-     * 
+     *
      * @return The height
-    */
+     */
     int get_height()
     {
         return this->height;
     }
 
     /**
+     * @brief Gets the window's title.
+     *
+     * @return The title
+     */
+    char *get_title()
+    {
+        return this->title;
+    }
+
+    /**
      * @brief Gets the window's position.
-     * 
+     *
      * @return The position
-    */
+     */
     Vec2D<int> *get_position()
     {
         int *x = new int;
@@ -226,78 +277,16 @@ public:
     }
 
     /**
-     * @brief Gets the window's x position.
-     * 
-     * @return The x position
-    */
-    int get_position_x()
-    {
-        int *x = new int;
-        int *y = new int;
-        glfwGetWindowPos(this->window, x, y);
-        return *x;
-    }
-
-    /**
-     * @brief Gets the window's y position.
-     * 
-     * @return The y position
-    */
-    int get_position_y()
-    {
-        int *x = new int;
-        int *y = new int;
-        glfwGetWindowPos(this->window, x, y);
-        return *y;
-    }
-
-    /**
-     * @brief Gets the window's title.
-     * 
-     * @return The title
-    */
-    char *get_title()
-    {
-        return this->title;
-    }
-
-    /**
      * @brief Gets the position of the mouse relative to the window.
-     * 
+     *
      * @return the position of the mouse
-    */
+     */
     Vec2D<double> *get_mouse_position()
     {
         double *x = new double;
         double *y = new double;
         glfwGetCursorPos(this->window, x, y);
         return new Vec2D<double>(*x, *y);
-    }
-
-    /**
-     * @brief Gets the x position of the mouse relative to the window.
-     * 
-     * @return the x position of the mouse
-    */
-    double get_mouse_position_x()
-    {
-        double *x = new double;
-        double *y = new double;
-        glfwGetCursorPos(this->window, x, y);
-        return *x;
-    }
-
-    /**
-     * @brief Gets the y position of the mouse relative to the window.
-     * 
-     * @return the y position of the mouse
-    */
-    double get_mouse_position_y()
-    {
-        double *x = new double;
-        double *y = new double;
-        glfwGetCursorPos(this->window, x, y);
-        return *y;
     }
 };
 
