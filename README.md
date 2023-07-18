@@ -10,6 +10,7 @@
 - [X] Window, Window Framerate, More Functions
 - [X] Lines, Angled, Positioned
 - [X] Keys, Mouse Buttons, IsPressed
+- [ ] Text
 - [ ] Rects, Filled, Line
 
 # License
