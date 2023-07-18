@@ -33,6 +33,41 @@ public:
         this->update_vertices(window);
     }
 
+    Vec3D<GLfloat> get_position()
+    {
+        return this->position;
+    }
+
+    GLfloat get_radius()
+    {
+        return this->radius;
+    }
+
+    Color get_fill_color()
+    {
+        return this->fill_color;
+    }
+
+    Color get_outline_color()
+    {
+        return this->outline_color;
+    }
+
+    GLfloat get_outline_width()
+    {
+        return this->width;
+    }
+
+    GLint get_sides()
+    {
+        return this->sides;
+    }
+
+    GLint get_num_of_vertices()
+    {
+        return this->num_of_vertices;
+    }
+
     void set_fill_color(Color color)
     {
         this->fill_color = color;
