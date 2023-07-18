@@ -104,6 +104,92 @@ public:
         glfwSwapBuffers(this->window);
         glfwPollEvents();
     }
+
+    /**
+     * @brief Sets the framerate
+     * 
+     * @param framerate The framerate
+     */
+    void set_framerate(int framerate)
+    {
+        glfwSwapInterval(framerate);
+    }
+
+    /**
+     * @brief Sets the window's title.
+     * 
+     * @param title The title
+     */
+    void set_title(char *title)
+    {
+        glfwSetWindowTitle(this->window, title);
+    }
+
+    /**
+     * @brief Sets the window's width and height.
+     * 
+     * @param width The width
+     * @param height The height
+     */
+    void set_size(int width, int height)
+    {
+        this->width = width;
+        this->height = height;
+        glfwSetWindowSize(this->window, width, height);
+    }
+
+    /**
+     * @brief Sets the window's width.
+     * 
+     * @param width The width
+     */
+    void set_width(int width)
+    {
+        this->width = width;
+        glfwSetWindowSize(this->window, width, this->height);
+    }
+
+    /**
+     * @brief Sets the window's height.
+     * 
+     * @param height The height
+     */
+    void set_height(int height)
+    {
+        this->height = height;
+        glfwSetWindowSize(this->window, this->width, height);
+    }
+
+    /**
+     * @brief Sets the window's position.
+     * 
+     * @param x The x position
+     * @param y The y position
+     */
+    void set_position(int x, int y)
+    {
+        glfwSetWindowPos(this->window, x, y);
+    }
+
+    /**
+     * @brief Sets the window's x position.
+     * 
+     * @param x The x position
+     */
+    void set_position_x(int x)
+    {
+        glfwSetWindowPos(this->window, x, this->height);
+    }
+
+    /**
+     * @brief Sets the window's y position.
+     * 
+     * @param y The y position
+     */
+    void set_position_y(int y)
+    {
+        glfwSetWindowPos(this->window, this->width, y);
+    }
 };
 
 #endif // WINDOW_H
