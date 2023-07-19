@@ -16,17 +16,10 @@ public:
     {
         this->points = std::vector<Vertex>();
     }
-
     Vertices(int n)
     {
-        this->points = std::vector<Vertex>(n, Vertex(0, 0, 0));
+        this->points = std::vector<Vertex>(n);
     }
-
-    Vertices(int n, GLfloat x, GLfloat y, GLfloat z)
-    {
-        this->points = std::vector<Vertex>(n, Vertex(x, y, z));
-    }
-
     Vertices(int n, Vertex v)
     {
         this->points = std::vector<Vertex>(n, v);
