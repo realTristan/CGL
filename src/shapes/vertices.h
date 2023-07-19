@@ -63,7 +63,7 @@ public:
      * @return The vertices in a vector array
      */
     std::vector<Vertex> as_vector() {
-        return this-points;
+        return this->points;
     }
     
     /**
@@ -71,7 +71,7 @@ public:
      *
      * @return The vertices in an array
      */
-    Vec3D<GLfloat> *as_vec_arr()
+    Vec3D<GLfloat> *as_vec3d_arr()
     {
         return this->points.data();
     }
