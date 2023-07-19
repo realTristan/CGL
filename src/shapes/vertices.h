@@ -58,15 +58,20 @@ public:
     }
     
     /**
-     * @brief Get the vertices in vertex (Vec3D<GLfloat>) form
+     * @brief Get the vertices in a vector of Vec3D<GLfloat>
      *
      * @return The vertices in a vector array
      */
-    std::vector<Vertex> get_as_vector() {
+    std::vector<Vertex> as_vector() {
         return this-points;
     }
     
-    Vec3D *get_data()
+    /**
+     * @brief Get the vertices in an array of Vec3D<GLfloat>
+     *
+     * @return The vertices in an array
+     */
+    Vec3D<GLfloat> *as_vec_arr()
     {
         return this->points.data();
     }
@@ -76,7 +81,7 @@ public:
      *
      * @return GLfloat* The vertices as a GLfloat array.
      */
-    GLfloat *get_as_glfloat_arr()
+    GLfloat *as_glfloat_arr()
     {
         GLfloat *vertices = new GLfloat[this->points.size() * 3];
 
