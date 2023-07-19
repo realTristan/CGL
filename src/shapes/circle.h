@@ -198,7 +198,7 @@ public:
             Vertex vertex = Vertex(
                 this->position.x + (this->radius * cos(i * M_PI_2 / this->sides)),
                 this->position.y + (this->radius * sin(i * M_PI_2 / this->sides)),
-                this->position.z)
+                this->position.z);
             vertices->set(i, vertex);
         }
         this->vertices = vertices->as_glfloat_arr();

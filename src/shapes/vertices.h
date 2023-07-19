@@ -43,7 +43,7 @@ public:
      */
     void push_front(Vertex v)
     {
-        this->points.push_back(this->points.begin(), v);
+        this->points.insert(this->points.begin(), v);
     }
     
     /**
