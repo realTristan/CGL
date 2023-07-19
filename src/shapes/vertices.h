@@ -35,6 +35,16 @@ public:
     {
         this->points.push_back(v);
     }
+
+    /**
+     * @brief Push a vertex into the vertices at the front
+     *
+     * @param v The vertex to push front
+     */
+    void push_front(Vertex v)
+    {
+        this->points.push_back(this->points.begin(), v);
+    }
     
     /**
      * @brief Sets the vertex at the specified index.
@@ -54,6 +64,11 @@ public:
      */
     std::vector<Vertex> get_as_vector() {
         return this-points;
+    }
+    
+    Vec3D *get_data()
+    {
+        return this->points.data();
     }
 
     /**
