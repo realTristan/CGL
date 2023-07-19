@@ -9,9 +9,10 @@ typedef Vec3D<GLfloat> Vertex;
 
 class Vertices
 {
-public:
+private:
     std::vector<Vertex> points;
-
+    
+public:
     Vertices()
     {
         this->points = std::vector<Vertex>();
@@ -24,7 +25,17 @@ public:
     {
         this->points = std::vector<Vertex>(n, v);
     }
-
+    
+    /**
+     * @brief Pushback a vertex into the vertices
+     *
+     * @param v The vertex to push back
+     */
+    void push_back(Vertex v)
+    {
+        this->points.push_back(v);
+    }
+    
     /**
      * @brief Sets the vertex at the specified index.
      *
