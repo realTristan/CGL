@@ -200,7 +200,7 @@ public:
                                  this->position.y + (this->radius * sin(i * M_PI_2 / this->sides)),
                                  this->position.z));
         }
-        this->vertices = vertices->get();
+        this->vertices = vertices->as_glfloat_arr();
     }
 
     /**
