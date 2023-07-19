@@ -195,10 +195,11 @@ public:
         Vertices *vertices = new Vertices(this->num_of_vertices, this->position);
         for (int i = 1; i < this->num_of_vertices; i++)
         {
-            vertices->set(i, Vec3D<GLfloat>(
-                                 this->position.x + (this->radius * cos(i * M_PI_2 / this->sides)),
-                                 this->position.y + (this->radius * sin(i * M_PI_2 / this->sides)),
-                                 this->position.z));
+            Vertex vertex = Vertex(
+                this->position.x + (this->radius * cos(i * M_PI_2 / this->sides)),
+                this->position.y + (this->radius * sin(i * M_PI_2 / this->sides)),
+                this->position.z)
+            vertices->set(i, vertex);
         }
         this->vertices = vertices->as_glfloat_arr();
     }
