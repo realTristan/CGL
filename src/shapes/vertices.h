@@ -35,13 +35,22 @@ public:
     {
         this->points[i] = v;
     }
+    
+    /**
+     * @brief Get the vertices in vertex (Vec3D<GLfloat>) form
+     *
+     * @return The vertices in a vector array
+     */
+    std::vector<Vertex> get_as_vector() {
+        return this-points;
+    }
 
     /**
      * @brief Returns the vertices as a GLfloat array.
      *
      * @return GLfloat* The vertices as a GLfloat array.
      */
-    GLfloat *get()
+    GLfloat *get_as_glfloat_arr()
     {
         GLfloat *vertices = new GLfloat[this->points.size() * 3];
 
