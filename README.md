@@ -12,6 +12,7 @@
 - [X] Keys, Mouse Buttons, IsPressed
 - [X] Discrete Window Contexts
 - [ ] Rects, Filled, Line
+- [ ] Polygons
 - [ ] Images
 - [ ] Text
 
