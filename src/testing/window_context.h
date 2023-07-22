@@ -2,8 +2,9 @@
 #define TESTING_WINDOW_CONTEXT_H
 
 #include <window/window.h>
-#include <testing/utils.h>
 #include <shapes/circle.h>
+#include <testing/utils.h>
+
 #include <utils/vector3d.h>
 #include <utils/color.h>
 

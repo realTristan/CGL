@@ -1,12 +1,14 @@
 #ifndef SHAPES_LINE_H
 #define SHAPES_LINE_H
 
-#include <shapes/vertices.h>
-#include <utils/vector3d.h>
+#include <GLFW/glfw3.h>
+
 #include <window/window.h>
+
+#include <utils/vector3d.h>
 #include <utils/color.h>
 #include <utils/math.h>
-#include <GLFW/glfw3.h>
+
 #include <math.h>
 #include <vector>
 

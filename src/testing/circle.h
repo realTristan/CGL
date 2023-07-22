@@ -1,13 +1,15 @@
 #ifndef TESTING_CIRCLE
 #define TESTING_CIRCLE
 
-#include <windows.h>
 #include <GLFW/glfw3.h>
-#include <utils/vector3d.h>
+
 #include <shapes/circle.h>
 #include <window/window.h>
 #include <testing/utils.h>
+
+#include <utils/vector3d.h>
 #include <utils/color.h>
+
 #include <math.h>
 
 class TestingCircle

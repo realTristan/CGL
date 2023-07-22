@@ -1,8 +1,9 @@
 #ifndef SHAPES_POSITIONED_LINE_H
 #define SHAPES_POSITIONED_LINE_H
 
-#include <shapes/line/line.h>
 #include <GLFW/glfw3.h>
+
+#include <shapes/line/line.h>
 
 class PositionedLine : public Line
 {

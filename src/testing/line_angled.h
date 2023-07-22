@@ -1,13 +1,15 @@
 #ifndef TESTING_ANGLED_LINE
 #define TESTING_ANGLED_LINE
 
-#include <windows.h>
 #include <GLFW/glfw3.h>
-#include <utils/vector3d.h>
+
+#include <shapes/line/angled.h>
 #include <window/window.h>
 #include <testing/utils.h>
+
+#include <utils/vector3d.h>
 #include <utils/color.h>
-#include <shapes/line/angled.h>
+
 #include <math.h>
 
 class TestingAngledLine

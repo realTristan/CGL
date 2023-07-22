@@ -1,11 +1,14 @@
 #ifndef SHAPES_ANGLED_LINE_H
 #define SHAPES_ANGLED_LINE_H
 
+#include <GLFW/glfw3.h>
+
 #include <shapes/line/line.h>
+
 #include <utils/vector3d.h>
 #include <utils/color.h>
 #include <utils/math.h>
-#include <GLFW/glfw3.h>
+
 #include <math.h>
 
 class AngledLine : public Line

@@ -1,11 +1,14 @@
 #ifndef SHAPES_CIRCLE_H
 #define SHAPES_CIRCLE_H
 
-#include <shapes/vertices.h>
+#include <GLFW/glfw3.h>
+
+#include <shapes/common/vertices3d.h>
+
 #include <utils/vector3d.h>
 #include <utils/color.h>
 #include <utils/math.h>
-#include <GLFW/glfw3.h>
+
 #include <math.h>
 
 /**
@@ -192,10 +195,10 @@ public:
      */
     void update_vertices()
     {
-        Vertices *vertices = new Vertices(this->num_of_vertices, this->position);
+        Vertices3D *vertices = new Vertices3D(this->num_of_vertices, this->position);
         for (int i = 1; i < this->num_of_vertices; i++)
         {
-            Vertex vertex = Vertex(
+            Vertex3D vertex = Vertex3D(
                 this->position.x + (this->radius * cos(i * M_PI_2 / this->sides)),
                 this->position.y + (this->radius * sin(i * M_PI_2 / this->sides)),
                 this->position.z);

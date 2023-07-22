@@ -1,29 +1,31 @@
-#ifndef SHAPES_VERTICES_H
-#define SHAPES_VERTICES_H
+#ifndef SHAPES_VERTICES3D_H
+#define SHAPES_VERTICES3D_H
+
+#include <GLFW/glfw3.h>
 
 #include <utils/vector3d.h>
-#include <GLFW/glfw3.h>
+
 #include <vector>
 
-typedef Vec3D<GLfloat> Vertex;
+typedef Vec3D<GLfloat> Vertex3D;
 
-class Vertices
+class Vertices3D
 {
 private:
-    std::vector<Vertex> points;
+    std::vector<Vertex3D> points;
     
 public:
-    Vertices()
+    Vertices3D()
     {
-        this->points = std::vector<Vertex>();
+        this->points = std::vector<Vertex3D>();
     }
-    Vertices(int n)
+    Vertices3D(int n)
     {
-        this->points = std::vector<Vertex>(n);
+        this->points = std::vector<Vertex3D>(n);
     }
-    Vertices(int n, Vertex v)
+    Vertices3D(int n, Vertex3D v)
     {
-        this->points = std::vector<Vertex>(n, v);
+        this->points = std::vector<Vertex3D>(n, v);
     }
     
     /**
@@ -31,7 +33,7 @@ public:
      *
      * @param v The vertex to push back
      */
-    void push_back(Vertex v)
+    void push_back(Vertex3D v)
     {
         this->points.push_back(v);
     }
@@ -41,7 +43,7 @@ public:
      *
      * @param v The vertex to push front
      */
-    void push_front(Vertex v)
+    void push_front(Vertex3D v)
     {
         this->points.insert(this->points.begin(), v);
     }
@@ -52,7 +54,7 @@ public:
      * @param i The index of the vertex to set.
      * @param v The vertex to set.
      */
-    void set(int i, Vertex v)
+    void set(int i, Vertex3D v)
     {
         this->points[i] = v;
     }
@@ -62,7 +64,7 @@ public:
      *
      * @return The vertices in a vector array
      */
-    std::vector<Vertex> as_vector() {
+    std::vector<Vertex3D> as_vector() {
         return this->points;
     }
     

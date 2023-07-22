@@ -1,13 +1,15 @@
 #ifndef TESTING_POSITIONED_LINE
 #define TESTING_POSITIONED_LINE
 
-#include <windows.h>
 #include <GLFW/glfw3.h>
-#include <utils/vector3d.h>
-#include <window/window.h>
-#include <testing/utils.h>
-#include <utils/color.h>
+
 #include <shapes/line/positioned.h>
+#include <testing/utils.h>
+#include <window/window.h>
+
+#include <utils/vector3d.h>
+#include <utils/color.h>
+
 #include <math.h>
 
 class TestingPositionedLine
