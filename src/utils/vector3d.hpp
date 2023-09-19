@@ -1,5 +1,5 @@
-#ifndef UTILS_VEC3D_H
-#define UTILS_VEC3D_H
+#ifndef UTILS_VEC3D_HPP
+#define UTILS_VEC3D_HPP
 
 #include <math.h>
 #include <tuple>
@@ -157,4 +157,4 @@ public:
     }
 };
 
-#endif // UTILS_VEC3D_H
+#endif // UTILS_VEC3D_HPP

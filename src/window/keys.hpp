@@ -1,5 +1,5 @@
-#ifndef WINDOW_KEYS_H
-#define WINDOW_KEYS_H
+#ifndef WINDOW_KEYS_HPP
+#define WINDOW_KEYS_HPP
 
 #include <GLFW/glfw3.h>
 
@@ -173,4 +173,4 @@ public:
     static const int KP_EQUAL = 336;
 };
 
-#endif // WINDOW_KEYS_H
+#endif // WINDOW_KEYS_HPP

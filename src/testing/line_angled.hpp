@@ -1,18 +1,18 @@
-#ifndef TESTING_POSITIONED_LINE
-#define TESTING_POSITIONED_LINE
+#ifndef TESTING_ANGLED_LINE_HPP
+#define TESTING_ANGLED_LINE_HPP
 
 #include <GLFW/glfw3.h>
 
-#include <shapes/line/positioned.h>
-#include <testing/utils.h>
-#include <window/window.h>
+#include <shapes/line/angled.hpp>
+#include <window/window.hpp>
+#include <testing/utils.hpp>
 
-#include <utils/vector3d.h>
-#include <utils/color.h>
+#include <utils/vector3d.hpp>
+#include <utils/color.hpp>
 
 #include <math.h>
 
-class TestingPositionedLine
+class TestingAngledLine
 {
 public:
     static int start(void)
@@ -27,9 +27,8 @@ public:
         window->set_position(500, 200);
 
         // Create a new circle
-        Vec3D<GLfloat> start_position = Vec3D<GLfloat>(100, 100, 0);
-        Vec3D<GLfloat> end_position = Vec3D<GLfloat>(200, 100, 0);
-        PositionedLine *line = new PositionedLine(start_position, end_position, 5.0f);
+        Vec3D<GLfloat> start_position = Vec3D<GLfloat>(100, 400, 0);
+        AngledLine *line = new AngledLine(start_position, 100.0, -30.0, 2.0f);
 
         // Loop until the user closes the window
         while (window->is_open())
@@ -50,4 +49,4 @@ public:
     }
 };
 
-#endif // TESTING_POSITIONED_LINE
+#endif // TESTING_ANGLED_LINE_HPP

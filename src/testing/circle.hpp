@@ -1,18 +1,18 @@
-#ifndef TESTING_ANGLED_LINE
-#define TESTING_ANGLED_LINE
+#ifndef TESTING_CIRCLE_HPP
+#define TESTING_CIRCLE_HPP
 
 #include <GLFW/glfw3.h>
 
-#include <shapes/line/angled.h>
-#include <window/window.h>
-#include <testing/utils.h>
+#include <shapes/circle.hpp>
+#include <window/window.hpp>
+#include <testing/utils.hpp>
 
-#include <utils/vector3d.h>
-#include <utils/color.h>
+#include <utils/vector3d.hpp>
+#include <utils/color.hpp>
 
 #include <math.h>
 
-class TestingAngledLine
+class TestingCircle
 {
 public:
     static int start(void)
@@ -27,8 +27,11 @@ public:
         window->set_position(500, 200);
 
         // Create a new circle
-        Vec3D<GLfloat> start_position = Vec3D<GLfloat>(100, 400, 0);
-        AngledLine *line = new AngledLine(start_position, 100.0, -30.0, 2.0f);
+        Vec3D<GLfloat> position = Vec3D<GLfloat>(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, 0);
+        Circle *circle = new Circle(position, 120, 128);
+        circle->set_fill_color(BLACK);
+        circle->set_outline_color(WHITE);
+        circle->set_outline_width(5);
 
         // Loop until the user closes the window
         while (window->is_open())
@@ -37,7 +40,7 @@ public:
             window->clear(BLACK);
 
             // Render OpenGL here
-            line->draw();
+            circle->draw();
 
             // Display the window
             window->display();
@@ -49,4 +52,4 @@ public:
     }
 };
 
-#endif // TESTING_ANGLED_LINE
+#endif // TESTING_CIRCLE_HPP

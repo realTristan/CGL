@@ -1,18 +1,18 @@
-#ifndef TESTING_CIRCLE
-#define TESTING_CIRCLE
+#ifndef TESTING_POSITIONED_LINE_HPP
+#define TESTING_POSITIONED_LINE_HPP
 
 #include <GLFW/glfw3.h>
 
-#include <shapes/circle.h>
-#include <window/window.h>
-#include <testing/utils.h>
+#include <shapes/line/positioned.hpp>
+#include <testing/utils.hpp>
+#include <window/window.hpp>
 
-#include <utils/vector3d.h>
-#include <utils/color.h>
+#include <utils/vector3d.hpp>
+#include <utils/color.hpp>
 
 #include <math.h>
 
-class TestingCircle
+class TestingPositionedLine
 {
 public:
     static int start(void)
@@ -27,11 +27,9 @@ public:
         window->set_position(500, 200);
 
         // Create a new circle
-        Vec3D<GLfloat> position = Vec3D<GLfloat>(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, 0);
-        Circle *circle = new Circle(position, 120, 128);
-        circle->set_fill_color(BLACK);
-        circle->set_outline_color(WHITE);
-        circle->set_outline_width(5);
+        Vec3D<GLfloat> start_position = Vec3D<GLfloat>(100, 100, 0);
+        Vec3D<GLfloat> end_position = Vec3D<GLfloat>(200, 100, 0);
+        PositionedLine *line = new PositionedLine(start_position, end_position, 5.0f);
 
         // Loop until the user closes the window
         while (window->is_open())
@@ -40,7 +38,7 @@ public:
             window->clear(BLACK);
 
             // Render OpenGL here
-            circle->draw();
+            line->draw();
 
             // Display the window
             window->display();
@@ -52,4 +50,4 @@ public:
     }
 };
 
-#endif // TESTING_CIRCLE
+#endif // TESTING_POSITIONED_LINE_HPP

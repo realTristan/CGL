@@ -1,9 +1,9 @@
-#ifndef SHAPES_VERTICES3D_H
-#define SHAPES_VERTICES3D_H
+#ifndef SHAPES_VERTICES3D_HPP
+#define SHAPES_VERTICES3D_HPP
 
 #include <GLFW/glfw3.h>
 
-#include <utils/vector3d.h>
+#include <utils/vector3d.hpp>
 
 #include <vector>
 
@@ -13,7 +13,7 @@ class Vertices3D
 {
 private:
     std::vector<Vertex3D> points;
-    
+
 public:
     Vertices3D()
     {
@@ -27,7 +27,7 @@ public:
     {
         this->points = std::vector<Vertex3D>(n, v);
     }
-    
+
     /**
      * @brief Pushback a vertex into the vertices
      *
@@ -47,7 +47,7 @@ public:
     {
         this->points.insert(this->points.begin(), v);
     }
-    
+
     /**
      * @brief Sets the vertex at the specified index.
      *
@@ -58,16 +58,17 @@ public:
     {
         this->points[i] = v;
     }
-    
+
     /**
      * @brief Get the vertices in a vector of Vec3D<GLfloat>
      *
      * @return The vertices in a vector array
      */
-    std::vector<Vertex3D> as_vector() {
+    std::vector<Vertex3D> as_vector()
+    {
         return this->points;
     }
-    
+
     /**
      * @brief Get the vertices in an array of Vec3D<GLfloat>
      *
@@ -98,4 +99,4 @@ public:
     }
 };
 
-#endif // SHAPES_VERTICES_H
+#endif // SHAPES_VERTICES_HPP

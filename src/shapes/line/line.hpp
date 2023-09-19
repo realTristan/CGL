@@ -1,12 +1,12 @@
-#ifndef SHAPES_LINE_H
-#define SHAPES_LINE_H
+#ifndef SHAPES_LINE_HPP
+#define SHAPES_LINE_HPP
 
 #include <GLFW/glfw3.h>
 
-#include <window/window.h>
+#include <window/window.hpp>
 
-#include <utils/vector3d.h>
-#include <utils/color.h>
+#include <utils/vector3d.hpp>
+#include <utils/color.hpp>
 #include <utils/math.h>
 
 #include <math.h>
@@ -42,13 +42,14 @@ public:
      *
      * @return The start position of the line.
      */
-    Vec3D<GLfloat> get_start_position() {
+    Vec3D<GLfloat> get_start_position()
+    {
         return this->start_position;
     }
 
     /**
      * @brief Sets the color of the line.
-     * 
+     *
      * @param color The color of the line.
      *
      * @return The color of the line.
@@ -60,7 +61,7 @@ public:
 
     /**
      * @brief Sets the width of the line.
-     * 
+     *
      * @param width The width of the line.
      *
      * @return The width of the line.
@@ -72,7 +73,7 @@ public:
 
     /**
      * @brief Sets the start position of the line.
-     * 
+     *
      * @param start_position The start position of the line.
      *
      * @return The start position of the line.
@@ -87,13 +88,14 @@ public:
      *
      * @return The end position of the line.
      */
-    Vec3D<GLfloat> get_end_position() {
+    Vec3D<GLfloat> get_end_position()
+    {
         return this->end_position;
     }
 
     /**
      * @brief Sets the end position of the line.
-     * 
+     *
      * @param end_position The end position of the line.
      *
      * @return The end position of the line.
@@ -111,7 +113,8 @@ public:
     {
         // Fill the vertices with extra vertices to make the line thicker
         std::vector<GLfloat> vertices(this->width * 6);
-        for (int i = 0; i < this->width; i++) {
+        for (int i = 0; i < this->width; i++)
+        {
             vertices.push_back(this->start_position.x);
             vertices.push_back(this->start_position.y + i);
             vertices.push_back(this->start_position.z);
@@ -133,4 +136,4 @@ public:
     }
 };
 
-#endif // SHAPES_LINE_H
+#endif // SHAPES_LINE_HPP

@@ -1,9 +1,9 @@
-#ifndef WINDOW_H
-#define WINDOW_H
+#ifndef WINDOW_HPP
+#define WINDOW_HPP
 
 #include <GLFW/glfw3.h>
-#include <utils/color.h>
-#include <utils/vector2d.h>
+#include <utils/color.hpp>
+#include <utils/vector2d.hpp>
 #include <iostream>
 
 /**
@@ -86,7 +86,7 @@ public:
     }
 
     /**
-     * @brief Initializes GLFW and creates a new window with the specified settings. 
+     * @brief Initializes GLFW and creates a new window with the specified settings.
      * The window can be accessed by the provided function.
      *
      * @param settings The window settings.
@@ -290,4 +290,4 @@ public:
     }
 };
 
-#endif // WINDOW_H
+#endif // WINDOW_HPP

@@ -1,9 +1,9 @@
-#ifndef SHAPES_POSITIONED_LINE_H
-#define SHAPES_POSITIONED_LINE_H
+#ifndef SHAPES_POSITIONED_LINE_HPP
+#define SHAPES_POSITIONED_LINE_HPP
 
 #include <GLFW/glfw3.h>
 
-#include <shapes/line/line.h>
+#include <shapes/line/line.hpp>
 
 class PositionedLine : public Line
 {
@@ -21,4 +21,4 @@ public:
     }
 };
 
-#endif // SHAPES_POSITIONED_LINE_H
+#endif // SHAPES_POSITIONED_LINE_HPP

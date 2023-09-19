@@ -1,19 +1,19 @@
-#ifndef SHAPES_CIRCLE_H
-#define SHAPES_CIRCLE_H
+#ifndef SHAPES_CIRCLE_HPP
+#define SHAPES_CIRCLE_HPP
 
 #include <GLFW/glfw3.h>
 
-#include <shapes/common/vertices3d.h>
+#include <shapes/common/vertices3d.hpp>
 
-#include <utils/vector3d.h>
-#include <utils/color.h>
+#include <utils/vector3d.hpp>
+#include <utils/color.hpp>
 #include <utils/math.h>
 
 #include <math.h>
 
 /**
  * @brief A class that represents a circle.
- * 
+ *
  */
 class Circle
 {
@@ -230,4 +230,4 @@ public:
     }
 };
 
-#endif // SHAPES_CIRCLE_H
+#endif // SHAPES_CIRCLE_HPP
